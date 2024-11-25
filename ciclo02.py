@@ -12,3 +12,27 @@ del paquete random
 import random
 aleatorio = random.randint(limite_inf, limite_sup)
 """
+import random
+
+numrandom = random.randint(1, 100)
+intentos = 10
+adivinado = False
+
+print("Adivina un número entre 1 y 100")
+print("Tienes 10 intentos para adivinarlo")
+
+while intentos > 0 and not adivinado:
+    print(f"\nTe quedan {intentos} intentos")
+    numero = int(input("Ingresa un número entero: "))
+    if numero == numrandom:
+        adivinado = True
+    elif numero < numrandom:
+        print( f"El  número secreto es MAYOR que el {numero}")
+    else:
+        print( f"El número secreto es MENOR que el {numero}")
+        
+    intentos -= 1
+if adivinado:
+    print(f"\n¡Felicitaciones! Has adivinado el número en {10 - intentos} intentos")
+else:
+    print(f"\nLo siento, te has quedado sin intentos. El número era {numrandom}")
